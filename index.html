@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Website</title>
+</head>
+<body>
+<div class="container">
+    <nav class="tabs">
+        <button class="tab-button active" onclick="showTab('loManagement')">LO Management</button>
+        <button class="tab-button" onclick="showTab('lrManagement')">LR Management</button>
+        <button class="tab-button" onclick="showTab('candidates')">Candidates</button>
+        <button class="tab-button" onclick="showTab('reports')">Reports</button>
+    </nav>
+
+    <div id="loManagement" class="tab-content active">
+        <h2>LO Management</h2>
+        <button class="primary" onclick="showCreateForm('lo')">Create LO</button>
+        <button class="primary" onclick="downloadLOData()">Download LO Data</button>
+        <table id="lo-table">
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="lrManagement" class="tab-content">
+        <h2>LR Management</h2>
+        <button class="primary" onclick="showCreateForm('lr')">Create LR</button>
+        <button class="primary" onclick="downloadLRData()">Download LR Data</button>
+        <table id="lr-table">
+            <thead>
+            <tr>
+                <th>User ID</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="candidates" class="tab-content">
+        <h2>Candidates</h2>
+        <table id="candidates-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="reports" class="tab-content">
+        <h2>Reports</h2>
+        <form id="report-form">
+            <label for="report-field-1">Field 1</label>
+            <input type="text" id="report-field-1" required>
+
+            <label for="report-field-2">Field 2</label>
+            <input type="text" id="report-field-2" required>
+
+            <label for="report-field-3">Field 3</label>
+            <input type="text" id="report-field-3" required>
+
+            <button type="submit" class="primary">Submit Report</button>
+        </form>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <form id="modal-form">
+                <label for="modal-userId">User ID</label>
+                <input type="text" id="modal-userId" required>
+
+                <label for="modal-id">ID</label>
+                <input type="text" id="modal-id" required>
+
+                <label for="modal-title-input">Title</label>
+                <input type="text" id="modal-title-input" required>
+
+                <label for="modal-body">Body</label>
+                <textarea id="modal-body" required></textarea>
+
+                <button type="submit" class="primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
